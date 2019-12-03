@@ -1,4 +1,4 @@
- export MOVIE_API_KEY=<Your api key>
-export SECRET_KEY=<Your secret key>
+
+export SECRET_KEY=Vique254
 
 python3.6 manage.py server
