@@ -1,0 +1,39 @@
+<div class="navbar navbar-dark bg-primary" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <ul>
+            <a style="text-align: center; color: yellow;" class="navbar-brand" href="/"> Home </a>
+            </ul>
+        </div>
+  
+        <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          {% if current_user.is_authenticated %}
+          <li style="color:orange">{{current_user.username }}</li><br>
+          <li>{{current_user.bio}}</li>
+          <!-- avatar or photo cover -->
+          <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
+          <li><a style="color: yellow;"  href="{{url_for('auth.logout')}}">Sign out</a></li>
+          {% else %}
+          <a id="start" class="btn btn-danger animated infinite flash" href="{{url_for('auth.login')}}">Login</a>
+          {%endif%}
+        </ul>
+      </div>
+  
+  
+      <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li style="color:yellow"></li>
+            <li><a style="color: orange;"  href="{{url_for('auth.logout')}}"></a></li>
+            <li><a style="color: yellow;" href="{{url_for('auth.login')}}"></a></li>
+          </ul>
+        </div>
+      
+  </div>
+  </div>
