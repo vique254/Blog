@@ -1,4 +1,4 @@
-<div class="navbar navbar-dark bg-primary" role="navigation">
+<div class="navbar navbar-dark bg-secondary" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvWGjpdaEchlLXRWFFWLF8skIQTsrDyT8HEcMA3DOxZQDXO4tM&s); background-repeat: no-repeat; background-size:cover;" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -8,7 +8,7 @@
               <span class="icon-bar"></span>
             </button>
             <ul>
-            <a style="text-align: center; color: yellow;" class="navbar-brand" href="/"> Home </a>
+            <a style="text-align: center; color: orange;" class="navbar-brand" href="/"> Home </a>
             </ul>
         </div>
   
@@ -17,10 +17,13 @@
           {% if current_user.is_authenticated %}
           <li style="color:orange">{{current_user.username }}</li><br>
           <li>{{current_user.bio}}</li>
+         
           <!-- avatar or photo cover -->
           <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
           <li><a style="color: yellow;"  href="{{url_for('auth.logout')}}">Sign out</a></li>
           {% else %}
+          <a id="start"  class="btn btn-primary" href="{{url_for('auth.register')}}">Sign up</a>
+
           <a id="start" class="btn btn-danger animated infinite flash" href="{{url_for('auth.login')}}">Login</a>
           {%endif%}
         </ul>
@@ -34,6 +37,6 @@
             <li><a style="color: yellow;" href="{{url_for('auth.login')}}"></a></li>
           </ul>
         </div>
-      
+
   </div>
   </div>
