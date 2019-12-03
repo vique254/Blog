@@ -20,7 +20,7 @@
           <li>{{current_user.bio}}</li>
          
           <!-- avatar or photo cover -->
-          <li><a href="{{url_for('main.index',uname=current_user.username)}}">Profile</a></li>
+          <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
           <li><a style="color: yellow;"  href="{{url_for('auth.logout')}}">Sign out</a></li>
           {% else %}
           <a id="start"  class="btn btn-primary" href="{{url_for('auth.register')}}">Sign up</a>
